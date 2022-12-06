@@ -22,15 +22,15 @@ let stack8 = ['r', 'q', 'd', 'f'];
 let stack9 = ['h', 'p', 'l', 'n', 'c', 's', 'd'];
 
 let stackContainer = [
-  stack1,
-  stack2,
-  stack3,
-  stack4,
-  stack5,
-  stack6,
-  stack7,
-  stack8,
-  stack9,
+  stack1.reverse(),
+  stack2.reverse(),
+  stack3.reverse(),
+  stack4.reverse(),
+  stack5.reverse(),
+  stack6.reverse(),
+  stack7.reverse(),
+  stack8.reverse(),
+  stack9.reverse(),
 ];
 let instructionSet = `move 3 from 8 to 9
 move 2 from 2 to 8
@@ -543,6 +543,7 @@ const instructionReader = ([itemCount, from, to]) => {
     let poped = stackContainer[from - 1].pop();
     accumulator.push(poped);
   }
+  accumulator.reverse(); //PART 2. FOR PART 1 REMOVE THIS LINE
   stackContainer[to - 1] = [...stackContainer[to - 1], ...accumulator];
 };
 
@@ -555,5 +556,5 @@ for (let index in arrayfy) {
   instructionReader(set.split(',').map(Number));
 }
 for (let i in stackContainer) {
-  console.log(stackContainer[i].at(-1));
+  console.log(stackContainer[i].at(-1).toUpperCase());
 }

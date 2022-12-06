@@ -30,6 +30,7 @@ const instructionReader = ([itemCount, from, to]) => {
     let poped = stackContainer[from - 1].pop();
     accumulator.push(poped);
   }
+  accumulator.reverse(); //PART 2. FOR PART 1 REMOVE THIS LINE
   stackContainer[to - 1] = [...stackContainer[to - 1], ...accumulator];
 };
 
