@@ -12,27 +12,6 @@
 [P] [H] [P] [Q] [P] [M] [P] [F] [D]
 `;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let stack1 = ['z', 'n'];
 let stack2 = ['m', 'c', 'd'];
 let stack3 = ['p'];
@@ -44,7 +23,7 @@ move 2 from 2 to 1
 move 1 from 1 to 2`;
 
 let arrayfy = instructionSet.split('\n');
-[3, 1, 3];
+
 const instructionReader = ([itemCount, from, to]) => {
   let accumulator = [];
   for (let i = 0; i < itemCount; i++) {
@@ -65,6 +44,3 @@ for (let index in arrayfy) {
 for (let i in stackContainer) {
   console.log(stackContainer[i].at(-1));
 }
-
-
-
