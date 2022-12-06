@@ -1,6 +1,37 @@
 //let stack1 = ["t","r","g","w","q","m","f","p"]
 //let stack2 = ["r","f","h"]
 //let stack3 =["d","s","h","g","v","r"]
+`
+[T]     [D]         [L]            
+[R]     [S] [G]     [P]         [H]
+[G]     [H] [W]     [R] [L]     [P]
+[W]     [G] [F] [H] [S] [M]     [L]
+[Q]     [V] [B] [J] [H] [N] [R] [N]
+[M] [R] [R] [P] [M] [T] [H] [Q] [C]
+[F] [F] [Z] [H] [S] [Z] [T] [D] [S]
+[P] [H] [P] [Q] [P] [M] [P] [F] [D]
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let stack1 = ['z', 'n'];
 let stack2 = ['m', 'c', 'd'];
@@ -21,7 +52,6 @@ const instructionReader = ([itemCount, from, to]) => {
     accumulator.push(poped);
   }
   stackContainer[to - 1] = [...stackContainer[to - 1], ...accumulator];
-  console.log(stackContainer);
 };
 
 for (let index in arrayfy) {
@@ -32,3 +62,9 @@ for (let index in arrayfy) {
 
   instructionReader(set.split(',').map(Number));
 }
+for (let i in stackContainer) {
+  console.log(stackContainer[i].at(-1));
+}
+
+
+
