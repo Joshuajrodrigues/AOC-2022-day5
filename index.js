@@ -13,13 +13,15 @@ move 2 from 2 to 1
 move 1 from 1 to 2`;
 
 let arrayfy = instructionSet.split('\n');
-
+[3, 1, 3];
 const instructionReader = ([itemCount, from, to]) => {
   let accumulator = [];
   for (let i = 0; i < itemCount; i++) {
-    accumulator = stackContainer[from - 1].pop();
+    let poped = stackContainer[from - 1].pop();
+    accumulator.push(poped);
   }
   stackContainer[to - 1] = [...stackContainer[to - 1], ...accumulator];
+  console.log(stackContainer);
 };
 
 for (let index in arrayfy) {
@@ -30,5 +32,3 @@ for (let index in arrayfy) {
 
   instructionReader(set.split(',').map(Number));
 }
-
-console.log(stack1, stack2, stack3);
